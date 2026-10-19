@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>DrillGround — Fireground Training Drills</title>
+    <meta
+      name="description"
+      content="Browse and run fire-service training drills. For any firefighter who wants to get better at the job."
+    />
+
+    <!-- Installable on Android (Chrome) and Apple (Safari → Add to Home Screen). -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#b91c1c" />
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="DrillGround" />
+
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <a class="brand" href="#/" aria-label="DrillGround home">
+        <svg class="brand-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M4 2 12 4 20 2Q7.24 16.76 22 4L20 12 22 20Q7.24 7.24 20 22L12 20 4 22Q16.76 7.24 2 20L4 12 2 4Q16.76 16.76 4 2Z" />
+        </svg>
+        <span class="brand-name">DrillGround</span>
+      </a>
+      <p class="tagline">Fireground drills for anyone who wants to get better at the job.</p>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <!-- Views are rendered here by app.js -->
+      <div id="view" aria-live="polite"></div>
+    </main>
+
+    <footer class="footer">
+      <p id="footer-note">Loading the drill library…</p>
+      <p class="disclaimer" id="disclaimer"></p>
+      <p>
+        <a href="privacy.html">Privacy policy</a>
+        &middot;
+        <a href="mailto:grant@sirenstosyntax.com?subject=DrillGround%20feedback">Something wrong? Tell me</a>
+      </p>
+    </footer>
+
+    <!--
+      Live Play acknowledge service (EB-0214). Public URL, not a secret.
+      purchase.js POSTs { purchaseToken, productId } here after a TWA buy
+      and on restore. Acknowledge only — never consume(). Public Play
+      charging is live (GATE_OPEN). Stripe stays held.
+    -->
+    <script>
+      window.DRILLGROUND_ACKNOWLEDGE_ENDPOINT =
+        "https://drillground-play-ack-6764861541.us-central1.run.app/api/purchases/acknowledge";
+      window.DRILLGROUND_PACKS_ENDPOINT =
+        "https://drillground-play-ack-6764861541.us-central1.run.app/api/packs";
+    </script>
+    <script src="recommend-drills.js" defer></script>
+    <script src="tailboard.js" defer></script>
+    <script src="entitlements.js" defer></script>
+    <script src="purchase.js" defer></script>
+    <script src="resources.js" defer></script>
+    <script src="app.js" defer></script>
+    <script>
+      // Register the service worker so the app works offline once loaded.
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("sw.js").catch(function () {
+            /* offline support is a progressive enhancement; ignore failures */
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

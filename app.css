@@ -1,0 +1,954 @@
+/* DrillGround app — dependency-free, mobile-first, theme-aware.
+   Read by index.html; no build step. */
+
+:root {
+  --bg: #f5f5f4;
+  --surface: #ffffff;
+  --surface-2: #ecebe9;
+  --text: #1c1917;
+  --text-soft: #57534e;
+  --line: #d6d3d1;
+  --accent: #b91c1c; /* fire-service red */
+  --accent-ink: #ffffff;
+  --safety-bg: #fef2f2;
+  --safety-line: #fca5a5;
+  --safety-ink: #991b1b;
+  --lodd-bg: #1c1917;
+  --lodd-ink: #f5f5f4;
+  --focus: #2563eb;
+  --radius: 12px;
+  --maxw: 960px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c0a09;
+    --surface: #1c1917;
+    --surface-2: #292524;
+    --text: #f5f5f4;
+    --text-soft: #a8a29e;
+    --line: #44403c;
+    --accent: #ef4444;
+    --accent-ink: #0c0a09;
+    --safety-bg: #2a1414;
+    --safety-line: #7f1d1d;
+    --safety-ink: #fca5a5;
+    --lodd-bg: #000000;
+    --lodd-ink: #f5f5f4;
+    --focus: #60a5fa;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 10px 14px;
+  z-index: 10;
+}
+.skip-link:focus {
+  left: 8px;
+  top: 8px;
+}
+
+/* ---- Topbar ---- */
+.topbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 18px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+}
+.brand-mark {
+  /* A Maltese cross, echoing the app icon. Third mark in this spot: a Unicode
+     triangle glyph (the placeholder), then a shield, now the cross. It keeps
+     changing because it is the mark expressed a SECOND time, in markup, with
+     nothing linking it to icons/ — so every rebrand has to remember it exists.
+     Inline SVG rather than an <img> so it inherits --accent and costs no
+     request for a 20px decoration. */
+  color: var(--accent);
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+.tagline {
+  margin: 4px 0 0;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+main {
+  display: block;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 18px;
+  outline: none;
+}
+
+/* ---- Controls ---- */
+.controls {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.search {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text-soft);
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.chip[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+.result-count {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  margin: 2px 0 12px;
+}
+
+/* ---- Drill list ---- */
+.card-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.card {
+  display: block;
+  text-align: left;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+.card:hover {
+  border-color: var(--accent);
+}
+.card-id {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-soft);
+  text-transform: uppercase;
+}
+.card-title {
+  margin: 3px 0 8px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.card-obj {
+  margin: 0 0 10px;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  font-size: 0.72rem;
+  background: var(--surface-2);
+  color: var(--text-soft);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.tag.lodd {
+  background: var(--lodd-bg);
+  color: var(--lodd-ink);
+}
+
+.empty {
+  text-align: center;
+  color: var(--text-soft);
+  padding: 48px 12px;
+}
+
+/* ---- Detail view ---- */
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 0;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+.detail h1 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin: 4px 0 10px;
+}
+.detail .meta-row {
+  margin-bottom: 20px;
+}
+.section {
+  margin: 22px 0;
+}
+.section > h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-soft);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 6px;
+  margin: 0 0 12px;
+}
+.objective {
+  font-size: 1.12rem;
+  line-height: 1.5;
+}
+.steps {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.steps li {
+  position: relative;
+  padding: 4px 0 14px 44px;
+  margin: 0;
+}
+.steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+ul.plain {
+  margin: 0;
+  padding-left: 20px;
+}
+ul.plain li {
+  margin-bottom: 8px;
+}
+.callout {
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.callout.safety {
+  background: var(--safety-bg);
+  border-color: var(--safety-line);
+}
+.callout.safety h2 {
+  color: var(--safety-ink);
+  border-color: var(--safety-line);
+}
+.callout.lodd {
+  background: var(--lodd-bg);
+  color: var(--lodd-ink);
+  border-color: #000;
+}
+.callout.lodd h2 {
+  color: var(--lodd-ink);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.callout.lodd .lodd-lesson {
+  font-weight: 600;
+}
+.variation {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  background: var(--surface);
+}
+.variation h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+.variation .adds {
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  margin: 6px 0 0;
+}
+.refs {
+  color: var(--text-soft);
+  font-size: 0.88rem;
+}
+
+/* ---- Footer ---- */
+.footer {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 24px 18px 40px;
+  color: var(--text-soft);
+  font-size: 0.82rem;
+}
+.footer .disclaimer {
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.error {
+  background: var(--safety-bg);
+  border: 1px solid var(--safety-line);
+  color: var(--safety-ink);
+  padding: 16px;
+  border-radius: var(--radius);
+}
+
+/* ---- Self-assessment, plan, and the home prompt -------------------------
+   The vision calls self-assessment the product's first impression, so these
+   are sized for a thumb on a phone in a station bay, not a mouse. */
+
+.prompt {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-bottom: 20px;
+}
+.prompt h2 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+.prompt p {
+  margin: 0 0 12px;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.primary {
+  display: inline-block;
+  appearance: none;
+  border: none;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+.primary[disabled] {
+  background: var(--surface-2);
+  color: var(--text-soft);
+  cursor: default;
+}
+.link-btn {
+  display: inline-block;
+  appearance: none;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 4px;
+  text-decoration: none;
+}
+
+.view-title {
+  margin: 6px 0 4px;
+  font-size: 1.35rem;
+}
+.lede {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  margin: 0 0 18px;
+}
+
+.assess-row {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.assess-cat {
+  font-weight: 700;
+  font-size: 0.98rem;
+  margin-bottom: 8px;
+}
+.assess-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.rate {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text-soft);
+  padding: 9px 13px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 40px; /* thumb target */
+}
+.rate.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+/* "Not my role" is a legitimate answer, not a weak one — it should not read
+   as the same kind of choice as a self-rating. */
+.rate.r-skip.on {
+  background: var(--surface-2);
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.specialty,
+.context {
+  margin-top: 22px;
+  padding-top: 6px;
+}
+.specialty h3,
+.context h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-soft);
+  margin: 0 0 4px;
+}
+.toggle {
+  appearance: none;
+  border: 1px dashed var(--line);
+  background: var(--surface);
+  color: var(--text-soft);
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0 7px 8px 0;
+  min-height: 40px;
+}
+.toggle.on {
+  border-style: solid;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.ctx-label {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  margin: 12px 0 7px;
+}
+
+.assess-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 26px 0 8px;
+}
+
+.plan-card {
+  display: flex;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 15px 16px;
+  margin-bottom: 12px;
+}
+.plan-rank {
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plan-body {
+  min-width: 0;
+}
+.plan-title {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+  margin-bottom: 2px;
+}
+/* The reasons are the advisory stance made visible: a recommendation the user
+   cannot interrogate is an instruction. */
+.why {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--text-soft);
+  font-size: 0.88rem;
+}
+.why li {
+  margin-bottom: 3px;
+}
+
+.mini-plan {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.mini {
+  display: block;
+  padding: 10px 12px;
+  background: var(--surface-2);
+  border-radius: 9px;
+  text-decoration: none;
+  color: var(--text);
+}
+.mini strong {
+  display: block;
+  font-size: 0.95rem;
+}
+.mini span {
+  display: block;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.callout.warn {
+  background: var(--safety-bg);
+  border: 1px solid var(--safety-line);
+  color: var(--safety-ink);
+  padding: 12px 14px;
+  border-radius: 9px;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+/* The solo variant on a drill page. Distinct from the crew instructions above
+   it — a firefighter training alone must not blend the two by accident. */
+.solo-variant {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.solo-variant h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-soft);
+  margin: 14px 0 6px;
+}
+/* What the solo version cannot teach. Styled as a caution, not a footnote:
+   believing you trained a skill you did not is the hazard here. */
+.not-covered {
+  background: var(--safety-bg);
+  border: 1px solid var(--safety-line);
+  color: var(--safety-ink);
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin: 0;
+}
+
+/* ---- Tailboard ---------------------------------------------------------
+   The reflect step. Kept visually quiet: this is a private notebook, not a
+   form to be completed. */
+
+.reflect {
+  background: var(--surface-2);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.reflect-q {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+}
+.reflect-note-hint {
+  margin: 10px 0 0;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+.note {
+  width: 100%;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 9px 11px;
+  margin-bottom: 10px;
+  resize: vertical;
+}
+
+.tb-list {
+  display: grid;
+  gap: 10px;
+}
+.tb-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 13px 15px;
+}
+.tb-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.tb-when {
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+.tb-title {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  text-decoration: none;
+}
+.tb-cat {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-top: 2px;
+}
+.tb-note {
+  margin: 8px 0 0;
+  font-size: 0.92rem;
+}
+/* How it went, not a score. Rough is not failure — it is the useful answer. */
+.tag.went-well {
+  background: var(--surface-2);
+  color: var(--text);
+}
+.tag.went-ok {
+  background: var(--surface-2);
+  color: var(--text-soft);
+}
+.tag.went-rough {
+  background: var(--safety-bg);
+  color: var(--safety-ink);
+  border: 1px solid var(--safety-line);
+}
+
+/* Report a problem with a drill. Quiet by design — it should be findable when
+   something is wrong, not compete with the drill itself. */
+.report-drill {
+  margin: 18px 0 0;
+  font-size: 0.88rem;
+}
+.report-drill a {
+  color: var(--text-soft);
+}
+.report-drill a:hover,
+.report-drill a:focus {
+  color: var(--accent);
+}
+
+/* ---- Promotion prep track ----------------------------------------------
+   A study path, not a filtered list. Framed for a candidate. */
+
+.promo-prompt {
+  border-left-color: var(--accent);
+}
+.promo-progress {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  margin: 0 0 18px;
+}
+.promo-area {
+  margin-bottom: 22px;
+}
+.promo-area-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 4px;
+}
+.promo-area-head h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+.promo-area-count {
+  font-size: 0.82rem;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+.promo-blurb {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  margin: 8px 0 12px;
+}
+.promo-drills {
+  display: grid;
+  gap: 10px;
+}
+.promo-card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 13px 15px;
+  text-decoration: none;
+  color: var(--text);
+}
+.promo-card-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.promo-card-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+/* Locked cards read as previews, not dead ends — muted, but the title and
+   summary are fully legible so the user can judge whether to unlock.
+   Now used only by resource-pack cards: no DRILL is gated any more, so a
+   promotion card is always a plain link. (.promo-lock-note went with the locked
+   promotion drill; locked packs use .resource-lock-note.) */
+.promo-card.locked {
+  background: var(--surface-2);
+  border-style: dashed;
+}
+.tag.lock {
+  background: var(--surface-2);
+  color: var(--text-soft);
+  border: 1px solid var(--line);
+}
+.callout.lock-note {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+}
+
+/* ---- Resource packs -----------------------------------------------------
+   The material each drill names but does not ship. Reuses the promotion
+   track's card and lock styling so a locked pack reads the same way a locked
+   study drill does — muted, dashed, fully legible. */
+
+.resource-prompt {
+  border-left-color: var(--accent);
+}
+.resource-progress {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  margin: 0 0 18px;
+}
+
+/* The banner in the drill detail view. A pointer to the material, not the
+   material — a 30-card deck between Setup and Run the drill would bury the
+   drill itself. */
+.callout.resource-banner {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+}
+.callout.resource-banner.locked {
+  border-style: dashed;
+}
+.callout.unlock-bar {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+}
+.purchase-message {
+  color: var(--safety-ink);
+  font-size: 0.92rem;
+  margin: 0 0 10px;
+}
+.resource-banner-title {
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+.resource-contents,
+.resource-lock-note {
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  margin: 0 0 10px;
+}
+.resource-for {
+  font-size: 0.92rem;
+  margin: 0 0 4px;
+}
+
+.callout.resource-why,
+.callout.local-fill,
+.callout.synthetic-note {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+}
+/* Generated imagery gets the safety palette, not a neutral one. A user must
+   never skim past the fact that a picture is not a photograph. */
+.callout.synthetic-note {
+  background: var(--safety-bg);
+  border: 1px solid var(--safety-line);
+}
+.tag.synthetic {
+  background: var(--safety-bg);
+  color: var(--safety-ink);
+  border: 1px solid var(--safety-line);
+}
+.synthetic-label {
+  color: var(--safety-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 4px 0 8px;
+}
+
+.resource-component {
+  margin-bottom: 26px;
+}
+.resource-instructions {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  margin: 0 0 14px;
+}
+.resource-items {
+  margin: 0;
+  padding-left: 22px;
+}
+.resource-items > li {
+  margin-bottom: 18px;
+  padding-left: 4px;
+}
+.resource-item-text {
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+/* Worksheet blanks. Ruled lines rather than input boxes: these are printed or
+   copied into a notebook, and the app is not the place the user writes. */
+.resource-fields {
+  list-style: none;
+  margin: 8px 0;
+  padding: 0;
+}
+.resource-fields > li {
+  border-bottom: 1px solid var(--line);
+  padding: 6px 0 4px;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+.resource-answer {
+  margin: 8px 0 4px;
+  font-size: 0.93rem;
+}
+.resource-focus {
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin: 4px 0 0;
+}
+.resource-source,
+.resource-link {
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  margin: 4px 0 0;
+}
+.resource-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  margin: 0 0 6px;
+}
+/* An image spec whose pixels have not been rendered yet. Says so plainly
+   rather than showing a broken image or silently dropping the item, which
+   would make the pack look shorter than it is. */
+.resource-pending {
+  background: var(--surface-2);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  margin: 0 0 8px;
+  padding: 10px 12px;
+}
+
+/* The one whole sample item on a locked pack. Never a truncated deck. */
+.callout.resource-sample {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+}
+.resource-sample-note {
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  margin: 0 0 12px;
+}

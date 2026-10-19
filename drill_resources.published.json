@@ -1,0 +1,917 @@
+{
+  "meta": {
+    "name": "DrillGround Drill Resource Packs",
+    "description": "The material each drill names but does not ship. Every DRILL is free. Only free packs ship in the public catalog; paid pack authoring stays in-repo. Full paid bodies are not in this file."
+  },
+  "publication": {
+    "schema": "resources_published_v1",
+    "published_at": "2026-08-09T01:16:53.836Z",
+    "source_dir": "data/resources",
+    "pack_count": 7,
+    "free_pack_count": 7,
+    "paid_pack_count": 0,
+    "generator": "publish-drill-resources",
+    "public_paid_payloads": false
+  },
+  "packs": [
+    {
+      "drill_id": "LODD-006",
+      "title": "Blind-Timeline Kit — Template, Extraction Guide, Worked Set",
+      "summary": "The three-column blind-timeline sheet, a procedure for cutting any NIOSH or near-miss report into decision points without spoiling the ending, and one worked decision-point set so the user sees the cut before making their own. Reports are linked at their public source, not reproduced.",
+      "tier": "free",
+      "removes_prep": "The drill needs 'a printed or written blind-timeline template (three columns: what I know now / my decision / what actually happened)' and a report already cut into decision points. Cutting the report is the hard part and it is self-defeating: the firefighter has to read far enough to find the decision points, which is exactly the reading that destroys the blind timeline.",
+      "local_fill_required": false,
+      "components": [
+        {
+          "kind": "worksheet",
+          "label": "Three-column blind-timeline sheet",
+          "instructions": "Print one sheet per decision point, or rule a notebook page into three columns. Fill the first two columns and physically cover the third before you read on. The order is not negotiable: a decision written after reading the outcome is worthless, and you will not be able to tell the difference afterwards.",
+          "items": [
+            {
+              "text": "Decision point ___ of ___",
+              "fields": [
+                "What I know now (only what the report has told me so far)",
+                "My decision, and the one reason for it",
+                "What actually happened (COVER THIS UNTIL YOU HAVE WRITTEN COLUMN TWO)"
+              ],
+              "teaching_focus": "The physical cover is the mechanism. Hindsight is not resisted by intention."
+            },
+            {
+              "text": "After the last decision point — honest reconciliation",
+              "fields": [
+                "Decision points where I matched what the crew did",
+                "Decision points where I would have done the same thing that hurt someone",
+                "Decision points where I was right for the wrong reason"
+              ],
+              "teaching_focus": "The third row is the one people skip. Being right by luck is a finding about you, not a pass."
+            }
+          ]
+        },
+        {
+          "kind": "case_study",
+          "label": "How to cut a report into decision points",
+          "instructions": "Use this once on your first report and you will not need it again. Work top-down through the report's incident narrative only — never the findings section — and stop at each of these six triggers. Six to nine decision points is a good session; more than twelve and the reps get thin.",
+          "items": [
+            {
+              "text": "TRIGGER 1 — Arrival. The report describes what the first company saw. Stop before it says what they did. Decision: your initial report and your mode.",
+              "teaching_focus": "Size-up under exactly the information the crew had, which is always less than the report's reader has."
+            },
+            {
+              "text": "TRIGGER 2 — First assignment. The report states the resources on scene. Stop before the assignments. Decision: who you send where, and what you hold.",
+              "teaching_focus": "Resource allocation before the outcome is known."
+            },
+            {
+              "text": "TRIGGER 3 — A condition changes. Smoke, wind, a report of a victim, a collapse indicator, a change in the building's behavior. Stop at the change. Decision: do you continue, modify, or reset?",
+              "teaching_focus": "The reset decision, which is the one most reports turn on."
+            },
+            {
+              "text": "TRIGGER 4 — A communication happens or fails. A radio report is transmitted, missed, stepped on, or never made. Stop there. Decision: what you transmit, to whom, and what you do when you get no answer.",
+              "teaching_focus": "Communication as a decision rather than as background noise."
+            },
+            {
+              "text": "TRIGGER 5 — Accountability becomes uncertain. Someone's location or air state stops being known. Stop. Decision: PAR, and what triggers your mayday.",
+              "teaching_focus": "The gap between 'I am not sure where they are' and declaring it out loud."
+            },
+            {
+              "text": "TRIGGER 6 — The mayday, the collapse, or the injury. Stop immediately before it. Decision: what you do in the next sixty seconds with what you know at that instant.",
+              "teaching_focus": "The last commitment before the outcome, made without the outcome."
+            },
+            {
+              "text": "Where to get reports. NIOSH Fire Fighter Fatality Investigation and Prevention Program — the full report library, free and public domain. Search by year or by keyword; pick one you have not read.",
+              "link": "https://www.cdc.gov/niosh/fire/",
+              "source": "NIOSH FFFIPP (US federal, public domain)"
+            },
+            {
+              "text": "Near-miss variant. The National Firefighter Near-Miss Reporting System carries non-fatal accounts with the same structure, and the reporter's own reflection often names the decision point for you.",
+              "link": "https://www.firefighternearmiss.com/",
+              "source": "National Firefighter Near-Miss Reporting System"
+            }
+          ]
+        },
+        {
+          "kind": "case_study",
+          "label": "Worked cut — a big-box furniture showroom fire",
+          "instructions": "This is the shape of a finished cut, built from an incident already studied in LODD-002: the 2007 Charleston, South Carolina furniture-showroom fire. Read the decision-point prompts here, commit to each in writing, then read the actual report at the NIOSH link and reconcile. The prompts deliberately contain no findings and no outcome.",
+          "items": [
+            {
+              "text": "DECISION POINT 1 — You are first-due at a large single-story commercial furniture showroom with an attached warehouse, well after normal business hours. There is smoke from the rear loading area. The building's footprint is far larger than any residential structure in your district and its interior is an open showroom filled floor to ceiling with upholstered furniture. Give your initial radio report and declare a mode.",
+              "teaching_focus": "Whether the size of the building and the nature of the load change your mode before you have seen fire.",
+              "source": "Incident studied in LODD-002; read the NIOSH report for the actual sequence"
+            },
+            {
+              "text": "DECISION POINT 2 — Your first line is stretched. The distance from the apparatus to the seat of the fire is substantially longer than the preconnect lengths you carry. What do you do about water supply and hose length before committing anyone to the interior?",
+              "teaching_focus": "Stretch estimation and supply as a decision made before entry, not discovered during it."
+            },
+            {
+              "text": "DECISION POINT 3 — Crews are operating inside a very large open space with a heavy fuel load and limited visibility. You cannot see the boundaries of the compartment you are in. What do you require of your crews about orientation and egress, and how do you verify it?",
+              "teaching_focus": "Orientation in a compartment too large to feel like a compartment."
+            },
+            {
+              "text": "DECISION POINT 4 — Conditions in the showroom are changing and you have companies committed at depth. You have a decision about continued offensive operations. State it, and state what specific observation would make you reverse it.",
+              "teaching_focus": "Pre-committing to a reversal trigger, which is the discipline the fireground rarely allows later."
+            },
+            {
+              "text": "DECISION POINT 5 — Accountability of an interior crew becomes uncertain. State what you do, in order, in the next sixty seconds.",
+              "teaching_focus": "The sequence, under time pressure, from uncertainty to declared emergency."
+            },
+            {
+              "text": "RECONCILE — Now read the NIOSH report on this incident in full, including the contributing factors, and complete column three on every sheet. Then complete the honest reconciliation rows.",
+              "link": "https://www.cdc.gov/niosh/fire/",
+              "source": "NIOSH FFFIPP report library"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "NIOSH Fire Fighter Fatality Investigation and Prevention Program (public domain; linked, not reproduced)",
+        "National Firefighter Near-Miss Reporting System",
+        "Self-authored template, extraction procedure, and decision-point prompts",
+        "Incident already referenced by LODD-002 in the published library"
+      ],
+      "synthetic_assets": false,
+      "sme_review_required": true,
+      "locked": false,
+      "item_count": 16
+    },
+    {
+      "drill_id": "LODD-008",
+      "title": "One-Change Template — Reading to Rehearsed",
+      "summary": "The four-column one-change sheet the drill asks for, plus a worked example filled in from a public NIOSH report so the user can see what a good entry looks like, and a thirty-day follow-up row that makes the change checkable instead of remembered.",
+      "tier": "free",
+      "removes_prep": "The drill's equipment list names a 'printed or written one-change template (what I read / the one change / how I rehearsed it today / how I will know it stuck)' and then leaves the firefighter to draw it. Drawing the table is the moment most people substitute a mental note, and a mental note is exactly the failure the drill is built to prevent.",
+      "local_fill_required": false,
+      "components": [
+        {
+          "kind": "worksheet",
+          "label": "One-change sheet",
+          "instructions": "Print one per study session, or copy the four field labels into a notebook. Fill it in the same sitting you read the report — not later. The 'how I rehearsed it today' row must describe something your hands did, or the sheet is not finished.",
+          "items": [
+            {
+              "text": "What I read",
+              "fields": [
+                "Report number or near-miss ID",
+                "One sentence on what happened",
+                "The finding that landed hardest on me"
+              ],
+              "teaching_focus": "Forcing one finding to be picked. A study that adopts every recommendation adopts none."
+            },
+            {
+              "text": "The one change",
+              "fields": [
+                "The single change, stated as a behavior not an intention",
+                "Where it applies — which building, which position, which part of the shift",
+                "What I was doing before"
+              ],
+              "teaching_focus": "'Be more aware of flow path' is not a change. 'Chock the door on every apartment entry' is."
+            },
+            {
+              "text": "How I rehearsed it today",
+              "fields": [
+                "What my hands or my radio actually did",
+                "How many reps",
+                "What was awkward on the last rep"
+              ],
+              "teaching_focus": "The conversion step. This is the row that separates the drill from a safety meeting."
+            },
+            {
+              "text": "How I will know it stuck",
+              "fields": [
+                "The observable sign, thirty days out",
+                "Who or what will tell me — a partner, a photo, an app log",
+                "Date I will check"
+              ],
+              "teaching_focus": "Making the change falsifiable, so a change that did not stick shows up instead of fading."
+            },
+            {
+              "text": "Thirty-day check (fill in on the date above, not before)",
+              "fields": [
+                "Did it stick — yes, partly, no",
+                "Evidence",
+                "If no: the smaller version of the change I will try instead"
+              ],
+              "teaching_focus": "A failed change is data, and the fix is usually a smaller change rather than more resolve."
+            }
+          ]
+        },
+        {
+          "kind": "worksheet",
+          "label": "Worked example — a completed sheet",
+          "instructions": "Read this once before your first real sheet, then set it aside. It is a model of the level of specificity the columns want, not a change to adopt: your district, your apparatus, and your habits are not the ones in the example.",
+          "items": [
+            {
+              "text": "What I read — NIOSH reports repeatedly identify uncontrolled door openings creating a flow path between the vent and the seat of the fire, with crews advancing into the resulting flow. The finding that landed: the door was open behind the crew for the whole advance and nobody owned it.",
+              "source": "Pattern-level summary of NIOSH FFFIPP flow-path findings; read a specific report and cite it on your own sheet",
+              "teaching_focus": "Citing at pattern level is acceptable for a personal sheet; naming the specific report is better."
+            },
+            {
+              "text": "The one change — On every apartment or motel entry I make as the nozzle, I chock the door behind me before I advance past it, out loud, so the backup knows it is done. Applies to the three-story garden apartments on the east side of my first-due. Before: I advanced and assumed door control was somebody's job.",
+              "teaching_focus": "Named behavior, named location, named prior habit."
+            },
+            {
+              "text": "How I rehearsed it today — Dry-stretched 150 ft into the training door, chocked and called it, eight reps. On the last rep the chock was in the wrong pocket and I lost four seconds finding it, so I moved it to the left coat pocket and did two more.",
+              "teaching_focus": "The awkwardness is the useful part: it produced a gear change, not just reps."
+            },
+            {
+              "text": "How I will know it stuck — Next live apartment fire or acquired-structure evolution, the backup can confirm they heard the call. Checking 30 days out on the shift calendar.",
+              "teaching_focus": "An observer who did not know the plan is stronger evidence than self-report."
+            },
+            {
+              "text": "Thirty-day check — Partly. Chocked and called it on two of three evolutions; missed the one where I came in through a slider. Smaller version: add the slider to the rehearsal instead of trusting the habit to generalise.",
+              "teaching_focus": "The honest partial, and the smaller retry rather than more resolve."
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "NIOSH Fire Fighter Fatality Investigation and Prevention Program (public domain, cited not reproduced)",
+        "Self-authored template and worked example"
+      ],
+      "synthetic_assets": false,
+      "sme_review_required": true,
+      "locked": false,
+      "item_count": 10
+    },
+    {
+      "drill_id": "RIT-001",
+      "title": "Mayday Scenario Cards — 12 Briefs and a LUNAR Scorer",
+      "summary": "Twelve read-aloud mayday scenario briefs covering through-the-floor, entanglement, disorientation, low air, collapse entrapment, and the harder cases where the member is not sure yet — plus a LUNAR scoring strip the facilitator marks while listening, so the debrief argues about a filled sheet instead of about memory.",
+      "tier": "free",
+      "removes_prep": "The drill's equipment list says 'Scenario cards' and its setup says the instructor reads one. Nothing supplies them, so the facilitator improvises briefs on the spot — which produces the easy scenarios (through the floor, trapped by collapse) and never the ambiguous ones a member is most likely to freeze on.",
+      "local_fill_required": true,
+      "local_fill_note": "Before the first rep, write your department's mayday radio procedure and its designated emergency traffic channel on the scoring strip. LUNAR order and content vary between departments; where your procedure differs from the strip, your procedure wins and the strip gets corrected.",
+      "components": [
+        {
+          "kind": "scenario_set",
+          "label": "Read-aloud scenario briefs",
+          "instructions": "Training channel only — never the operations channel. These twelve cards are radio briefs. Do not put anyone through a floor, in wire, or on a spongy roof to run them. Optional physical stress is work in the bay (bear crawl, stairs), breathing freely — not air restriction, unless your SOP and a safety officer say otherwise. Facilitator only. Members are isolated and cannot hear each other's reps. Read one brief aloud verbatim, then stop talking and start the clock — the silence is part of the drill. Do not answer questions during the rep; a member who asks the facilitator for information is showing you something. After each rep, score the strip in front of the member, then move to the next member with a different card.",
+          "items": [
+            {
+              "text": "You were advancing the nozzle down a hallway on the second floor of a two-and-a-half story wood-frame dwelling. The floor gave way under you and you dropped into what feels like a stairwell or a void. You are on your back, your legs are below you, and you cannot see your backup. Your line came with you. Go.",
+              "answer": "A mayday declared before the member spends time on a silent self-rescue. Transmit first, then work the problem. Location as precisely as available including the floor they fell FROM and roughly where in the building. Unit and name. Assignment and air state read from the gauge, not guessed. Resources: what would actually get them out — a ladder to the void, RIT, a specific direction of approach. After the transmission they keep the hoseline as the orientation reference, and they do not sit still waiting to be found if they can still move.",
+              "teaching_focus": "Declaring before attempting. The most common failure is a two-minute self-rescue attempt in silence."
+            },
+            {
+              "text": "You are searching the second floor, right-hand search, when your SCBA harness snags on something behind you at shoulder height. You cannot free it by pulling forward and you cannot reach the snag with either hand. You have air, you can breathe, and you know roughly where you are. Go.",
+              "answer": "Mayday declared even though the member is breathing and oriented — entanglement that cannot be self-cleared is a mayday, not a problem to work quietly. LUNAR complete, air state read aloud, and a specific request: another set of hands, and a tool. Correct answer names the search wall so the rescuer knows which side to come up.",
+              "teaching_focus": "Calm entanglement is still a mayday. The air is spending the whole time it is being worked."
+            },
+            {
+              "text": "You separated from your partner making a left-hand search of a commercial occupancy with a heavy contents load. You have been moving for a while, you have lost the wall, and nothing you touch is familiar. Your low-air alarm has not activated. Go.",
+              "answer": "A mayday for disorientation — the hardest one to say out loud because nothing has physically happened yet. Location stated honestly as unknown, with everything that narrows it: which side you entered, which direction you were searching, roughly how long. Air read from the gauge. Request: sound, light, a hoseline, a search from a named side.",
+              "teaching_focus": "Admitting 'I do not know where I am' on the radio, which is where most members hesitate longest."
+            },
+            {
+              "text": "Your low-air alarm has just activated. You are deeper into the building than you thought and the way you came in is behind a room that is now involved. You are not trapped and you are not injured. Go.",
+              "answer": "A mayday or emergency traffic per department policy — an unplanned low-air activation with a compromised egress is not a normal exit. Air state exactly. Location. Request: a second egress, a line, or a RIT with air. Correct answer does not spend the remaining air deciding whether it counts.",
+              "teaching_focus": "The scenario where the member is fine right now and will not be in four minutes."
+            },
+            {
+              "text": "A ceiling assembly has come down across your lower body. You can breathe, you have your facepiece, you cannot move your legs, and you can reach your radio. You do not know if you are injured. Go.",
+              "answer": "Mayday, LUNAR complete, and an explicit statement that the member is pinned and cannot self-extricate. Air state. Request names what it will take: hands, a lift, cribbing, and a route. Correct answer includes activating the PASS after transmitting, not before.",
+              "teaching_focus": "Transmit first, then PASS — a PASS sounding under a radio transmission costs the transmission."
+            },
+            {
+              "text": "You are on the nozzle. Conditions above you have deteriorated fast and you believe the floor above is about to fail. Nothing has happened yet. Your officer is beside you. Go.",
+              "answer": "This is NOT a mayday — it is urgent traffic to command and an immediate withdrawal recommendation to the officer. The correct answer recognizes the difference and still gets on the radio fast. A member who declares a mayday here is not wrong enough to fail, but the debrief covers the distinction.",
+              "teaching_focus": "The discrimination drill: urgent is not mayday, and knowing the difference keeps the mayday meaningful."
+            },
+            {
+              "text": "Your facepiece has been dislodged and you have taken a breath of smoke. You have reseated it, you are coughing, and you can still see. You are twenty feet from a window you know is there. Go.",
+              "answer": "Mayday — an airway compromise is a mayday even after the seal is restored, because the member does not yet know what they inhaled. LUNAR, air state, and the window named as the intended egress so a rescuer can meet them there. Correct answer moves toward the window while transmitting.",
+              "teaching_focus": "Injuries the member wants to minimize. 'I am fine now' is not an assessment they can make."
+            },
+            {
+              "text": "You are operating alone on the roof of a one-story commercial building, cutting an inspection hole. The roof feels spongy underfoot and you have just found the second soft spot. You have not fallen. Go.",
+              "answer": "Urgent traffic and an immediate exit off the roof by the ladder, not a mayday — unless the member has already committed past a point they cannot retreat from. Correct answer states the condition to command in plain words so the interior gets it, and names the specific hazard location.",
+              "teaching_focus": "The transmission that protects other people rather than the transmitter."
+            },
+            {
+              "text": "You hear a PASS device activating somewhere ahead of you in a residential hallway. You cannot see it. You are alone; your partner went to the other side of the floor. Go.",
+              "answer": "A mayday for another member, transmitted as such, with the location of the PASS as precisely as it can be given and a clear statement that the transmitting member is not the one in trouble. The next action must be on the radio — hold, withdraw, or move toward the PASS. If they move they keep talking, keep a wall or a line, and do not disappear off assignment in silence. A silent solo search for the PASS is a fail. Whether command wants them to hold or close the distance is local. Disappearing is not.",
+              "teaching_focus": "Calling a mayday for someone else without muddling who is in trouble."
+            },
+            {
+              "text": "You are in a basement. You entered by an interior stair that is now producing heat and smoke you would not want to climb through. There is a window well you can see but not reach. You have air and you are not injured. Go.",
+              "answer": "Mayday. Location must include that the member is BELOW grade, which is the single most important word in the transmission. Air state. Request names the window well and the exterior side it is on. Correct answer does not attempt the stair before transmitting.",
+              "teaching_focus": "Below-grade location as the piece of information that changes the whole rescue."
+            },
+            {
+              "text": "Your radio is not transmitting. You have tried twice, changed nothing, and you are lost on the third floor. You have air. Go.",
+              "answer": "No radio: activate PASS, get to a window or exterior wall, make noise on a mechanical scale — tool on structure — and try the radio again from a different position and body orientation. Correct answer states out loud that the failure is possibly positional and moves before retrying, and does not abandon the radio.",
+              "teaching_focus": "The scenario the LUNAR script does not cover, so the member has to have a second plan."
+            },
+            {
+              "text": "You are the officer. One of your two members has stopped answering. The other is beside you. You are forty seconds into noticing. Go.",
+              "answer": "A mayday for the missing member, declared by the officer, without waiting for a PAR to confirm what is already known. LUNAR given for the member as best as the officer can — last known location, assignment, and estimated air. Correct answer does not spend the transmission explaining or apologising.",
+              "teaching_focus": "Officer-declared mayday on incomplete information, which is the call officers delay longest."
+            }
+          ]
+        },
+        {
+          "kind": "worksheet",
+          "label": "LUNAR scoring strip",
+          "instructions": "One strip per member per rep. Facilitator marks it live while the member transmits — not from memory afterwards. Show the member the marked strip during their debrief; the strip is the argument.",
+          "items": [
+            {
+              "text": "Declaration",
+              "fields": [
+                "Word 'mayday' used, three times or per local procedure (Y/N)",
+                "Seconds from end of brief to first transmission",
+                "Anything attempted before transmitting (describe)"
+              ],
+              "teaching_focus": "The delay is the number that predicts the outcome, and members always guess it low."
+            },
+            {
+              "text": "L — Location",
+              "fields": [
+                "Floor or level stated (Y/N)",
+                "Above or below grade stated where it applies (Y/N)",
+                "Anything that narrows it — side, room, direction of search (note)"
+              ]
+            },
+            {
+              "text": "U — Unit",
+              "fields": [
+                "Company or unit designation given (Y/N)"
+              ]
+            },
+            {
+              "text": "N — Name",
+              "fields": [
+                "Own name given (Y/N)"
+              ]
+            },
+            {
+              "text": "A — Assignment and Air",
+              "fields": [
+                "Assignment stated (Y/N)",
+                "Air read from the gauge, not estimated (Y/N)",
+                "Value given"
+              ]
+            },
+            {
+              "text": "R — Resources needed",
+              "fields": [
+                "A specific request, not 'help' (Y/N)",
+                "What was requested"
+              ]
+            },
+            {
+              "text": "Overall",
+              "fields": [
+                "Total transmission length in seconds",
+                "PASS activated after transmitting, not during (Y/N)",
+                "The one thing this member fixes before the next rep"
+              ],
+              "teaching_focus": "One correction per rep. Three corrections is a lecture and nothing changes."
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "Self-authored scenario briefs and scoring strip",
+        "Department mayday and emergency-traffic procedure (user-supplied, not reproduced)",
+        "Scenario situations drawn at pattern level from published NIOSH FFFIPP findings"
+      ],
+      "synthetic_assets": false,
+      "sme_review_required": true,
+      "locked": false,
+      "item_count": 19
+    },
+    {
+      "drill_id": "RIT-007",
+      "title": "Emergency Button Reference Card & Four-Position Rep Log",
+      "summary": "A pocket reference card on what a radio emergency button does, what it does not do, and the four questions to answer about your own radio before the first rep — plus the four-position rep log the drill asks the member to keep on index cards, with the position order and the failure notes already ruled in.",
+      "tier": "free",
+      "removes_prep": "The drill's setup requires the member to 'confirm before you begin whether your radio's emergency button transmits to dispatch on the channel it is on' and to log reps per position on index cards. The confirmation is four specific questions most members have never been told the answers to, and the log is a table nobody draws.",
+      "local_fill_required": true,
+      "local_fill_note": "The four confirmation questions on the reference card have answers only your communications division or radio shop can give. Get them, write them on the card, and re-check them after any radio system change — the answers are department-specific and they change.",
+      "components": [
+        {
+          "kind": "reference_card",
+          "label": "Emergency button — what it is and what it is not",
+          "instructions": "Before the first rep: confirm whether this button reaches dispatch on the channel the radio is on. If it does, move to a training or unused channel, or pull the battery and rehearse the motion only. Notify your communications center before any live activation is possible. Air stays off. Use your assigned radio and your assigned SCBA — not a spare. If your issued radio has no emergency button, the button half of this drill is N/A; still run the PASS half. Print at pocket size, or copy the four questions into a notebook. Fill in the answers from your communications division before the first rep. An unanswered question on this card is a hole in the member's mayday plan, not a formatting problem.",
+          "items": [
+            {
+              "text": "QUESTION 1 — On the channel my radio is normally on for fireground operations, does pressing the emergency button reach dispatch, or only the other radios on that talkgroup?",
+              "fields": [
+                "Answer, from communications division",
+                "Date confirmed"
+              ],
+              "teaching_focus": "The single most consequential unknown. A member who assumes dispatch is listening may be pressing a button that reaches only the crew standing beside them."
+            },
+            {
+              "text": "QUESTION 2 — What happens on the receiving end when I press it? A tone, a screen alert, an automatic voice channel grant, an ID that identifies my specific radio?",
+              "fields": [
+                "Answer",
+                "Does it identify my radio by ID or by assigned name"
+              ],
+              "teaching_focus": "Whether the button announces WHO, which decides whether it substitutes for any part of LUNAR."
+            },
+            {
+              "text": "QUESTION 3 — Does pressing it give me a dedicated transmit window, and for how long? Do I need to hold it, and does it keep my microphone open afterwards?",
+              "fields": [
+                "Answer",
+                "Hold duration required",
+                "Open-mic behavior after activation"
+              ],
+              "teaching_focus": "An open microphone the member does not know about can hold the channel and block the very help they called for."
+            },
+            {
+              "text": "QUESTION 4 — How do I clear it, and who is allowed to clear it?",
+              "fields": [
+                "Answer",
+                "Can I clear it myself",
+                "Who else can"
+              ],
+              "teaching_focus": "So an accidental activation is resolved on the radio instead of by silence."
+            },
+            {
+              "text": "WHAT THE BUTTON IS NOT — It is not a mayday. It is a fast attention signal that buys the member a channel and, on some systems, an identity. Everything a rescuer needs to find them still has to be said out loud: location, unit, name, assignment, air, and what they want. A member who presses the button and says nothing has announced that someone is in trouble somewhere.",
+              "teaching_focus": "The whole point of pairing this drill with RIT-001. Speed on the button is worthless without the transmission behind it."
+            },
+            {
+              "text": "PASS — MANUAL VERSUS AUTOMATIC — The automatic alarm needs the member to be still, and a member working a self-rescue is not still. Manual activation is the one that works while they are moving. If you can talk: radio transmission first, then PASS — a sounding PASS under your own mayday costs the transmission (RIT-001). If you cannot talk: emergency button, then PASS, then stay put. Automatic PASS needs you still; manual is the one that works while you move.",
+              "teaching_focus": "Ordering the two actions, which is the part members get backwards under stress."
+            }
+          ]
+        },
+        {
+          "kind": "worksheet",
+          "label": "Four-position rep log",
+          "instructions": "Before the first rep: confirm whether this button reaches dispatch on the channel the radio is on. If it does, move to a training or unused channel, or pull the battery and rehearse the motion only. Notify your communications center before any live activation is possible. Air stays off. Use your assigned radio and your assigned SCBA — not a spare. If your issued radio has no emergency button, the button half of this drill is N/A; still run the PASS half. One log per session. Run the positions in the order given — standing first because it is easiest, radio-side hip last because it is worst. Log every rep, including the failed ones; a log with no failures in it means the member was going slowly enough to succeed, which is not the drill. Under four seconds, gloved, without looking.",
+          "items": [
+            {
+              "text": "Position 1 — Standing",
+              "fields": [
+                "Rep times, all reps",
+                "Fastest",
+                "Number over 4 seconds",
+                "What went wrong on the slow ones",
+                "PASS times (all reps)",
+                "PASS fastest",
+                "PASS number over 4 seconds",
+                "What went wrong on the PASS"
+              ],
+              "teaching_focus": "Baseline. If standing is not comfortably under four, no other position will be."
+            },
+            {
+              "text": "Position 2 — Prone (face down, as if crawling)",
+              "fields": [
+                "Rep times, all reps",
+                "Fastest",
+                "Number over 4 seconds",
+                "Did the coat ride up over the radio (Y/N)",
+                "PASS times (all reps)",
+                "PASS fastest",
+                "PASS number over 4 seconds",
+                "What went wrong on the PASS"
+              ],
+              "teaching_focus": "The working position. Most reps in real life would happen from here."
+            },
+            {
+              "text": "Position 3 — Supine (on your back)",
+              "fields": [
+                "Rep times, all reps",
+                "Fastest",
+                "Number over 4 seconds",
+                "Could you reach across the SCBA harness (Y/N)",
+                "PASS times (all reps)",
+                "PASS fastest",
+                "PASS number over 4 seconds",
+                "What went wrong on the PASS"
+              ],
+              "teaching_focus": "The through-the-floor position, where the harness and the pack are between the hand and the radio."
+            },
+            {
+              "text": "Position 4 — Lying on your radio-side hip",
+              "fields": [
+                "Rep times, all reps",
+                "Fastest",
+                "Number over 4 seconds",
+                "Did you have to roll to reach it, and how long did the roll cost",
+                "PASS times (all reps)",
+                "PASS fastest",
+                "PASS number over 4 seconds",
+                "What went wrong on the PASS"
+              ],
+              "teaching_focus": "The worst case, deliberately last. If the answer is 'I have to roll', that is a gear-position finding, not a speed finding."
+            },
+            {
+              "text": "Combined — emergency button, then PASS, then ten-second hold",
+              "fields": [
+                "Combined times (all reps)",
+                "Fastest combined",
+                "Number that moved after the alert (movement after the alert is a fail)",
+                "Held still and audible for ten seconds (Y/N)"
+              ],
+              "teaching_focus": "The live drill success criteria. Button then PASS then ten seconds still and audible. Movement after the alert is a fail."
+            },
+            {
+              "text": "Session findings",
+              "fields": [
+                "Slowest position, and by how much",
+                "One change to where the radio is carried, if any",
+                "One change to the glove, coat, or strap that got in the way",
+                "Date of next session"
+              ],
+              "teaching_focus": "The output of this drill is usually a change to where the radio lives, not a faster thumb."
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "Self-authored reference card and rep log",
+        "Department radio system behavior and mayday procedure (user-supplied from communications division, not reproduced)"
+      ],
+      "synthetic_assets": false,
+      "sme_review_required": true,
+      "locked": false,
+      "item_count": 12
+    },
+    {
+      "drill_id": "SCBA-006",
+      "title": "Blind Pack Check — 16-Control Prompt Deck",
+      "summary": "Sixteen shuffle-and-draw prompt cards, one SCBA control per card, each with the call-out a correct answer contains: name it, state what it does, state where it is relative to your body. Ordered from the controls every pack has to the ones only some do, so the deck degrades gracefully on any SCBA.",
+      "tier": "free",
+      "removes_prep": "The drill opens by telling the member to write index cards, one control per card, and shuffle them face down every round. That is fifteen minutes of writing before the first rep, and a deck written from memory omits exactly the controls the member has forgotten — the ones the drill exists to find.",
+      "local_fill_required": true,
+      "local_fill_note": "SCBA configuration varies by manufacturer and by department spec. Before the first rep, pull the cards for controls your pack does not have, and write the correct position on the back of every card you keep from your own SCBA manual — the positions here are prompts, not your pack's layout.",
+      "components": [
+        {
+          "kind": "card_deck",
+          "label": "Control prompt cards",
+          "instructions": "Seated or kneeling, stationary, eyes closed only. Do not walk. Do not use a blackout hood unless a second member is within arm's reach with a stop signal called aloud. Air off unless your department's in-quarters practice says otherwise. If you open the cylinder or dump air, close it, bleed it, and return the pack to ride-ready before you log the drill complete. If you activate PASS, the bay needs to know it will sound. Print or copy one card per index card, front and back. Shuffle face down before each round. Draw, say the control's name aloud, state its function, then find it with a gloved hand and hold it until you have said where on your body it sits. The recorder is your scorer — a control you found but could not name is a miss. The scored run is the eight controls the drill names, or the ones your pack actually has from that list. The extra cards are more reps, not sixteen controls crammed into the same 60 seconds.",
+          "items": [
+            {
+              "text": "Cylinder valve",
+              "answer": "Names it, states it is the on/off for the whole air supply, and finds the handwheel on THEIR pack — write the position from the manual on the back of the card. Opens fully, not partially: a cracked valve can read as pressure on the gauge and starve the regulator under high flow.",
+              "teaching_focus": "The control that most often gets left half-open under a fast dress-out."
+            },
+            {
+              "text": "Cylinder gauge (the gauge on the bottle itself)",
+              "answer": "Names it, states it reads bottle pressure independent of the remote gauge, and finds it near the valve. Says out loud why two gauges exist: a disagreement between them is a fault, and the lower reading is the one you believe.",
+              "teaching_focus": "Two gauges, one truth — trusting the lower number."
+            },
+            {
+              "text": "Remote pressure gauge",
+              "answer": "Names it, states it is the gauge read while working, and finds it on the shoulder strap or chest without looking down. Says what pressure the department's air-management policy makes a decision point.",
+              "teaching_focus": "Reading air by hand position, which is the whole point of RIT-008."
+            },
+            {
+              "text": "Second-stage regulator — attachment to the facepiece",
+              "answer": "Names it, states it delivers air to the mask, and demonstrates the attach motion by feel with a gloved hand. States the audible or tactile confirmation that it seated.",
+              "teaching_focus": "The seat-confirmation habit, gloved and without vision."
+            },
+            {
+              "text": "Regulator release",
+              "answer": "Names it, states it detaches the regulator from the facepiece, and finds it without groping. States the one reason to use it on air and the several reasons not to.",
+              "teaching_focus": "Knowing a control exists is not permission to use it."
+            },
+            {
+              "text": "Purge valve",
+              "answer": "Names it, states it dumps air to clear the mask or to provide flow if the regulator fails, and finds the knob on the regulator body. States that it wastes air fast and is a bridge to an exit, not a fix.",
+              "teaching_focus": "Emergency flow versus air waste — the trade the member must already know."
+            },
+            {
+              "text": "Bypass valve",
+              "answer": "Names it, distinguishes it from the purge, states it feeds air around a failed regulator, and finds it by color-coded knob. If your pack combines or omits it, says so out loud.",
+              "teaching_focus": "Distinguishing two similar controls under glove and without sight."
+            },
+            {
+              "text": "PASS device — manual activation",
+              "answer": "Names it, states it is the manual alarm, finds and holds the activation control, and states how long an activation takes and what it sounds like from the outside.",
+              "teaching_focus": "The control RIT-007 times to under four seconds."
+            },
+            {
+              "text": "PASS device — reset and pre-alarm silence",
+              "answer": "Names it, states what silences a pre-alarm and what will not silence a full alarm, and finds the control. States the honest reason not to silence a pre-alarm out of habit.",
+              "teaching_focus": "The habit that turns a working PASS into a nuisance the member defeats."
+            },
+            {
+              "text": "Low-air alarm / end-of-service indicator",
+              "answer": "Names it, states the percentage or pressure at which it activates on this pack, and states what the department's policy says that activation means for the member's position in the building.",
+              "teaching_focus": "Local policy attached to a physical signal."
+            },
+            {
+              "text": "Waist buckle",
+              "answer": "Names it, finds and operates it one-handed with a gloved hand, and states that the waist strap carries the load off the shoulders — a pack worn on the shoulders alone shifts in a profile reduction.",
+              "teaching_focus": "The strap most often left loose, and the SCBA-008 connection."
+            },
+            {
+              "text": "Shoulder strap adjusters",
+              "answer": "Names them, finds both, and demonstrates the loosen-then-cinch motion by feel. States which direction releases under load.",
+              "teaching_focus": "Adjustment by feel, on air, in a reduced profile."
+            },
+            {
+              "text": "Chest strap",
+              "answer": "Names it, finds and operates it gloved, and states whether the department's practice is fastened or unfastened for structural work and why.",
+              "teaching_focus": "A local-practice question with a defensible answer either way."
+            },
+            {
+              "text": "Facepiece harness straps",
+              "answer": "Names them, states the tightening order used on this facepiece, and demonstrates the seal-check by feel.",
+              "teaching_focus": "Sealing without a mirror or a partner."
+            },
+            {
+              "text": "RIC / universal air connection (if your pack has one)",
+              "answer": "Names it, states it lets a RIT crew transfill air into this cylinder from outside, and finds the fitting and its cover. States that the member's job is to make it reachable, not to operate it. If your pack has a RIC/UAC, a buddy line, both, or neither, keep only the card that matches. They are not the same control. The member's job on a RIC fitting is to make it reachable for a rescuer, not to transfill themselves.",
+              "teaching_focus": "The control a downed firefighter must be able to present to a rescuer."
+            },
+            {
+              "text": "Voice amplifier (if your pack has one)",
+              "answer": "Names it, finds the switch gloved, and states what it does to a mayday transmission — and what it does not fix about a muffled LUNAR.",
+              "teaching_focus": "Not mistaking an amplifier for radio discipline."
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "Self-authored from the drill's own control inventory",
+        "Member's SCBA manufacturer emergency-procedures manual (user-supplied, not reproduced)"
+      ],
+      "synthetic_assets": false,
+      "sme_review_required": true,
+      "locked": false,
+      "item_count": 16
+    },
+    {
+      "drill_id": "TR-004",
+      "title": "Confined Space Permit & Attendant Kit",
+      "summary": "The entry permit frame, an attendant's duty card written as things the attendant must refuse rather than things they must do, and two site schematics to plan an entry against. Free, because the discipline this drill teaches is what keeps a would-be rescuer from becoming the second casualty.",
+      "tier": "free",
+      "removes_prep": "The drill names floor plans and a permit process and supplies neither. A confined-space drill without a written permit is just people in a hole, and an attendant with no duty card defaults to watching — which is the failure mode that kills rescuers.",
+      "local_fill_required": true,
+      "local_fill_note": "Confined space entry is governed by regulation and by your department's program, and both outrank this pack. Fill in your permit's required fields, your program reference, and your rescue-capability requirement before using the frame. If your department has no confined-space program, this pack is a planning exercise and no entry should occur.",
+      "components": [
+        {
+          "kind": "worksheet",
+          "label": "Entry permit frame",
+          "instructions": "Complete every block before anyone approaches the opening. A permit filled in afterwards is a document, not a control. Cross out and initial anything that does not apply rather than leaving it blank, so the blanks that remain mean something.",
+          "items": [
+            {
+              "text": "THE SPACE",
+              "fields": [
+                "Location and description",
+                "Configuration — entry type, dimensions, internal obstructions",
+                "What was in it, and what may still be",
+                "Is this a permit-required confined space under our program (Y/N)"
+              ]
+            },
+            {
+              "text": "HAZARD ASSESSMENT",
+              "fields": [
+                "Atmospheric: oxygen, combustible, toxic — readings and time taken",
+                "Engulfment potential",
+                "Configuration hazards — sloping or converging surfaces",
+                "Energy sources present",
+                "Anything above the entrant that can fall"
+              ],
+              "teaching_focus": "Atmospheric hazards get all the attention; engulfment and configuration kill people too."
+            },
+            {
+              "text": "ISOLATION AND CONTROL",
+              "fields": [
+                "Energy isolated, locked and tagged, by whom",
+                "Isolation verified by test, not by assumption (Y/N)",
+                "Ventilation established and running for how long",
+                "Re-test after ventilation — readings"
+              ],
+              "teaching_focus": "Verified by test. A locked switch and a de-energised circuit are different claims."
+            },
+            {
+              "text": "PEOPLE",
+              "fields": [
+                "Entry supervisor",
+                "Attendant — one job, no other duties",
+                "Entrants by name",
+                "Rescue capability on site and its response time",
+                "Everyone briefed on the abort signal (Y/N)"
+              ],
+              "teaching_focus": "Rescue capability ON SITE before entry, not summoned after. This is the row that most often gets fudged."
+            },
+            {
+              "text": "COMMUNICATION AND MONITORING",
+              "fields": [
+                "Entrant-to-attendant method, and the backup method",
+                "Continuous atmospheric monitoring (Y/N)",
+                "Interval for positive contact",
+                "What the attendant does if contact is missed once"
+              ]
+            },
+            {
+              "text": "AUTHORISATION AND CLOSE",
+              "fields": [
+                "Permit valid from and until",
+                "Signed by the entry supervisor",
+                "Entrants signed in and out — count matches (Y/N)",
+                "Space secured on completion"
+              ],
+              "teaching_focus": "Sign-in and sign-out counts. It is the only mechanism that catches a person left behind."
+            }
+          ]
+        },
+        {
+          "kind": "reference_card",
+          "label": "Attendant duty card — what you refuse",
+          "instructions": "Pocket size, for the attendant only. Written as refusals on purpose: an attendant's authority is negative, and an attendant who thinks their job is to observe will observe a fatality. Read every line aloud before taking the post.",
+          "items": [
+            {
+              "text": "I REFUSE to take any other task while I am the attendant. Not a hoseline, not a radio for something else, not a hand with equipment. If someone assigns me a second job, the entry stops.",
+              "teaching_focus": "The single most commonly broken rule in confined space work."
+            },
+            {
+              "text": "I REFUSE to enter the space. Whatever happens, whoever is in there, however close they are. If I go in, there is nobody outside and there are now two casualties.",
+              "teaching_focus": "The rule that will feel wrong at the worst moment. Rehearsed here so the feeling does not decide."
+            },
+            {
+              "text": "I REFUSE to let entry begin without on-site rescue capability. Not en route. On site.",
+              "teaching_focus": "Response time is the whole question. A rescue team twenty minutes out is not a control."
+            },
+            {
+              "text": "I REFUSE to accept a missed contact interval. One missed check and I initiate the emergency procedure. I do not wait for a second.",
+              "teaching_focus": "The waiting is what turns a rescue into a recovery."
+            },
+            {
+              "text": "DECIDE THE TIER BEFORE ANYONE MOVES. Non-entry retrieval — a line to a harness, worked from outside — is the first option and is available far more often than crews assume. Self-rescue, where the entrant walks or climbs out under their own power, is next. ENTRY RESCUE IS LAST, and it is the only one that puts a second person in the space. If entry does not need to be made, it must not be made.",
+              "teaching_focus": "Three tiers, in order. Most confined-space fatalities are would-be rescuers who skipped to the third."
+            },
+            {
+              "text": "WHICH TIER IS AVAILABLE HERE — answer before the permit is signed",
+              "fields": [
+                "Is a retrieval line rigged and workable from outside (Y/N)",
+                "If no: why not — geometry, obstruction, or nobody brought one",
+                "Could the entrant self-rescue if given air, light, or a ladder",
+                "What specifically would force an entry rescue rather than a retrieval",
+                "Who authorizes an entry rescue, by name"
+              ],
+              "teaching_focus": "The second row is the honest one: 'nobody brought one' is the most common answer and the most fixable. If the only reason a retrieval line is not workable is that nobody brought one, the entry does not start."
+            },
+            {
+              "text": "I REFUSE to lose count. I know exactly who is inside, by name, at all times, and the sign-in sheet is in my hand.",
+              "teaching_focus": "Names, not a number."
+            },
+            {
+              "text": "I REFUSE to let the monitoring stop. If the meter fails or alarms, the entrants come out while we sort it out.",
+              "teaching_focus": "An instrument failure is an evacuation, not a troubleshooting session."
+            },
+            {
+              "text": "I REFUSE to be talked out of any of the above by rank. I will state which line is being crossed and who is asking.",
+              "teaching_focus": "Naming it out loud is the only thing that reliably stops it."
+            },
+            {
+              "text": "OUR SPECIFICS",
+              "fields": [
+                "Our confined-space program reference",
+                "Our rescue-capability requirement",
+                "Our abort signal",
+                "Who I call to initiate the emergency procedure"
+              ],
+              "teaching_focus": "Four local answers the attendant must have before taking the post."
+            }
+          ]
+        },
+        {
+          "kind": "floor_plan",
+          "label": "Two site schematics",
+          "instructions": "Plan an entry against these before doing it on a real space. Mark the isolation points, the attendant's position, the ventilation path and the retrieval line on the drawing — a plan that cannot be drawn cannot be briefed.",
+          "items": [
+            {
+              "text": "Schematic A — vertical entry, below-grade vault with a single top hatch.",
+              "synthetic_prompt": "Clean technical section-view line drawing of a below-grade utility vault: rectangular concrete chamber below ground level with a single circular top hatch and a fixed ladder on one wall, a pipe entering one side wall and a sump in the floor, with the ground surface line shown above. Plain white background, thin dark lines, minimal labels, engineering-drawing style, no people, no fire, no smoke.",
+              "alt": "Technical vertical section of a below-grade concrete utility vault with a single circular top hatch, a fixed wall ladder, a pipe entering one wall and a floor sump, with the ground line above.",
+              "teaching_focus": "One opening, vertical, with a sump. Every hazard category is present in one drawing."
+            },
+            {
+              "text": "Schematic B — horizontal entry, tank with a side manway and internal obstruction.",
+              "synthetic_prompt": "Clean technical section-view line drawing of a horizontal cylindrical industrial tank resting on saddle supports, with a circular side manway at one end, an internal baffle plate partway along the interior dividing the space, and a small drain fitting at the bottom. Plain white background, thin dark lines, minimal labels, engineering-drawing style, no people, no fire, no smoke.",
+              "alt": "Technical section drawing of a horizontal cylindrical tank on saddle supports with a side manway at one end, an internal baffle dividing the interior, and a bottom drain fitting.",
+              "teaching_focus": "The baffle is the point: an entrant can get past it and out of sight and out of easy reach."
+            },
+            {
+              "text": "Plan the entry on the drawing",
+              "fields": [
+                "Isolation points marked",
+                "Attendant position marked — with line of sight or stated comms method",
+                "Ventilation inlet and outlet marked, and the path between them",
+                "Retrieval line route",
+                "Where a casualty would be if they collapsed at the furthest point",
+                "Time to reach them, honestly estimated"
+              ],
+              "teaching_focus": "The last two rows are the ones that change decisions."
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "Self-authored permit frame, attendant card and schematics",
+        "Applicable confined-space regulation and the department's own confined-space program (user-supplied and authoritative; nothing here authorizes entry)"
+      ],
+      "synthetic_assets": true,
+      "synthetic_caveat": "The schematics are AI-generated generic illustrations of confined-space configurations, for planning practice only. They are not real spaces, not to scale, and not engineering drawings. Plan real entries against the real space and your own program.",
+      "sme_review_required": true,
+      "locked": false,
+      "item_count": 19
+    },
+    {
+      "drill_id": "TRK-007",
+      "title": "Solar & Battery ID Deck — 10 Image Specs",
+      "summary": "Ten labeled image specs covering rooftop PV arrays, rapid-shutdown labeling, string inverters, home battery installations, and the meter-side disconnects, each with what to identify and what the presence of the component changes about utility control. Component identification and layout only — never a substitute for the utility isolation your authority having jurisdiction authorizes.",
+      "tier": "free",
+      "removes_prep": "The drill's equipment list ends with 'Photos of solar and battery installs' and nothing supplies them. A crew that has no PV in the district cannot photograph what they have never seen, which is exactly the crew that will meet it for the first time at 0300 on a working fire.",
+      "local_fill_required": true,
+      "local_fill_note": "Add photographs of the actual installations in your first-due as you find them on walkarounds, and write your own utility company's meter and disconnect arrangement on the last card. Local hardware and labeling practice vary and yours is the version that matters.",
+      "components": [
+        {
+          "kind": "image_deck",
+          "label": "Component identification specs",
+          "instructions": "Show one image at a time. The member names the component, then states the one thing its presence changes about utility control on this building. Images marked AI-GENERATED are for geometry, layout and component identification only — use them to learn what a rapid-shutdown label looks like and where a disconnect sits, never to judge fire conditions or damage severity. Every generated image renders with a visible synthetic label in the app.",
+          "items": [
+            {
+              "text": "Rooftop PV array on a residential gable roof — identify the array, the module rows, the roof area it denies you, and state what it changes about vertical ventilation on this roof.",
+              "synthetic_prompt": "Clear daytime photograph-style illustration of a residential asphalt-shingle gable roof with a rooftop photovoltaic array of dark rectangular modules in two rows on the south-facing slope, mounted on standoff rails a few inches above the shingles, conduit running from the array down the slope to a roof penetration. Neutral overcast lighting, no fire, no smoke, no people. Straight-on three-quarter view from a ladder tip height.",
+              "alt": "Residential shingle gable roof with two rows of dark photovoltaic modules on rail mounts on one slope, with conduit running to a roof penetration.",
+              "teaching_focus": "The array denies the roof area under and around it for cutting, and the conduit is energised. Identify the unobstructed slope before anyone goes up.",
+              "asset_path": "resources/TRK-007/01-rooftop-pv.jpg"
+            },
+            {
+              "text": "Rapid-shutdown label at the service equipment — identify the label, state what it tells you and, just as importantly, what it does not tell you.",
+              "synthetic_prompt": "Close-up photograph-style illustration of a reflective placard mounted on grey exterior electrical service equipment on a stucco wall, reading 'SOLAR PV SYSTEM EQUIPPED WITH RAPID SHUTDOWN' with a simplified line diagram of a house and roof array beneath the text. Neutral daylight, no fire, no smoke, no people, label filling most of the frame and legible.",
+              "alt": "Reflective placard on exterior electrical equipment reading SOLAR PV SYSTEM EQUIPPED WITH RAPID SHUTDOWN with a small house-and-array diagram.",
+              "teaching_focus": "The label says a shutdown initiator exists. It does not say the array conductors are de-energised, and it does not say anyone has operated it.",
+              "asset_path": "resources/TRK-007/02-rapid-shutdown-label.jpg"
+            },
+            {
+              "text": "String inverter mounted on an exterior wall — identify it, and state which side of it stays energised in daylight regardless of what you switch off.",
+              "synthetic_prompt": "Photograph-style illustration of a grey rectangular wall-mounted solar string inverter approximately two feet tall on an exterior stucco wall beside a conduit run and a small DC disconnect box, with warning labels visible on the front cover. Neutral daylight, no fire, no smoke, no people. Straight-on view.",
+              "alt": "Grey wall-mounted solar string inverter on an exterior wall with an adjacent small disconnect box and conduit.",
+              "teaching_focus": "The DC side from the array remains energised whenever the modules see light. Switching the AC side does not make the roof safe.",
+              "asset_path": "resources/TRK-007/03-string-inverter.jpg"
+            },
+            {
+              "text": "Micro-inverter / module-level electronics under the array — identify what is under the modules and state what it changes about cutting through the array.",
+              "synthetic_prompt": "Photograph-style illustration looking under the edge of a rooftop photovoltaic module on rail mounts, showing a small rectangular electronic unit attached to the racking beneath the module with short cables to adjacent units. Neutral daylight, close-up, no fire, no smoke, no people.",
+              "alt": "View beneath the edge of a rooftop solar module showing a small electronic unit mounted on the racking with short cables running to neighboring units.",
+              "teaching_focus": "There is energised electronics and cabling in the space between the modules and the roof deck. That space is not empty and it is not a place to put a saw.",
+              "asset_path": "resources/TRK-007/04-microinverter.jpg"
+            },
+            {
+              "text": "Roof-mounted DC conduit run — trace it, and state where it goes and why you care about its route through the attic.",
+              "synthetic_prompt": "Photograph-style illustration of metallic electrical conduit running from a rooftop solar array down across asphalt shingles, entering the roof through a flashed penetration, with a small red or orange conduit marking label visible. Neutral daylight, no fire, no smoke, no people.",
+              "alt": "Metal conduit running from a rooftop solar array across shingles into a flashed roof penetration, with a small warning label on the conduit.",
+              "teaching_focus": "Energised DC conductors run inside the building envelope between the array and the inverter. Opening the ceiling can open that conduit.",
+              "asset_path": "resources/TRK-007/05-dc-conduit.jpg"
+            },
+            {
+              "text": "Residential battery energy storage unit in a garage — identify it and state what it changes about isolating power to the structure.",
+              "synthetic_prompt": "Photograph-style illustration of a large white rectangular wall-mounted home battery energy storage unit, roughly four feet tall, on a garage drywall wall next to conduit and a grey electrical subpanel, concrete floor, storage shelving in the background. Neutral indoor lighting, no fire, no smoke, no people.",
+              "alt": "Large white wall-mounted home battery storage unit on a garage wall beside conduit and a grey electrical subpanel.",
+              "teaching_focus": "Pulling the meter does not de-energise the building. A battery back-feeds, and it holds stored energy that no external disconnect removes.",
+              "asset_path": "resources/TRK-007/06-garage-battery.jpg"
+            },
+            {
+              "text": "Battery installation with multiple stacked modules — identify the arrangement and state what the quantity changes about your risk assessment.",
+              "synthetic_prompt": "Photograph-style illustration of three tall white rectangular battery storage modules mounted side by side on an exterior wall of a house under a small protective canopy, with conduit connecting them and hazard labeling on each unit. Neutral daylight, no fire, no smoke, no people.",
+              "alt": "Three white battery storage modules mounted side by side on an exterior house wall under a canopy, connected by conduit, with hazard labels.",
+              "teaching_focus": "More modules is more stored energy and more thermal-runaway mass. This is a defensive-posture question long before it is a hoseline question.",
+              "asset_path": "resources/TRK-007/07-stacked-batteries.jpg"
+            },
+            {
+              "text": "Exterior electrical service — identify the meter, the main disconnect if present, and state in what order you would want them addressed and by whom.",
+              "synthetic_prompt": "Photograph-style illustration of a residential exterior electrical service on a stucco wall: round glass-domed utility meter in a grey socket, a grey main disconnect box below it with a external operating handle, and conduit running up into the wall. Neutral daylight, no fire, no smoke, no people. Straight-on view.",
+              "alt": "Residential exterior electrical service with a round glass utility meter, a grey main disconnect box with an external handle below it, and conduit.",
+              "teaching_focus": "Know which of these your department is authorised to operate and which belongs to the utility. Simulate and verbalise; do not operate live utilities without authorisation.",
+              "asset_path": "resources/TRK-007/08-electrical-service.jpg"
+            },
+            {
+              "text": "Gas meter and service shutoff — identify the shutoff, the tool it takes, and state what you must confirm before and after operating it.",
+              "synthetic_prompt": "Photograph-style illustration of a residential natural gas meter on an exterior wall, showing the meter body, the riser pipe from the ground, and the quarter-turn service valve with a rectangular tang below the meter. Neutral daylight, no fire, no smoke, no people, close enough that the valve tang is clearly visible.",
+              "alt": "Residential exterior natural gas meter with riser pipe and a quarter-turn service valve with a rectangular tang below the meter body.",
+              "teaching_focus": "A quarter turn to the closed position, with the right wrench, and the confirmation step: nobody restores it but the utility.",
+              "asset_path": "resources/TRK-007/09-gas-meter.jpg"
+            },
+            {
+              "text": "The card you write — your own utility arrangement.",
+              "fields": [
+                "Which utility serves your district and who to call",
+                "Which disconnects your department is authorised to operate",
+                "Where PV and battery installations you have found actually are — addresses",
+                "What your dispatch can tell you about a PV address before you arrive"
+              ],
+              "teaching_focus": "The pack cannot know your utility, your authorisation, or your district. This card is the one that makes the deck yours."
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "Self-authored image specifications and identification prompts",
+        "Local utility arrangement and departmental utility-control authorisation (user-supplied, not reproduced)"
+      ],
+      "synthetic_assets": true,
+      "synthetic_caveat": "These images are AI-generated and are training aids for component identification and layout only. They must never be used to judge fire conditions, smoke behavior, structural damage, or the state of an energised system, and they are not photographs of real installations. Verify every component against your own district and your utility's actual hardware.",
+      "sme_review_required": true,
+      "locked": false,
+      "item_count": 10
+    }
+  ]
+}

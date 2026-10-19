@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.sirenstosyntax.drillground",
+      "sha256_cert_fingerprints": [
+        "0A:6E:29:67:15:F7:43:BB:FB:00:87:63:3E:97:27:42:9E:AD:D6:0E:AC:A5:75:E0:F2:7D:8B:2F:DD:24:DC:E7"
+      ]
+    }
+  }
+]
